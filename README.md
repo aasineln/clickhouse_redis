@@ -6,7 +6,7 @@
 ____
 ## Запуск приложения
 1. Скопируйте все файлы проекта в отдельную дерикторию и установите библиотеки из requirements.txt
-2. ClickHouse может работать на любой операционной системе Linux, FreeBSD или Mac OS X с архитектурой процессора x86_64, AArch64 или PowerPC64LE. Предварительно собранные пакеты компилируются для x86_64 и используют набор инструкций SSE 4.2, поэтому, если не указано иное, его поддержка в используемом процессоре, становится дополнительным требованием к системе. Вот команда, чтобы проверить, поддерживает ли текущий процессор SSE 4.2:
+2. **ClickHouse** может работать на любой операционной системе Linux, FreeBSD или Mac OS X с архитектурой процессора x86_64, AArch64 или PowerPC64LE. Предварительно собранные пакеты компилируются для x86_64 и используют набор инструкций SSE 4.2, поэтому, если не указано иное, его поддержка в используемом процессоре, становится дополнительным требованием к системе. Вот команда, чтобы проверить, поддерживает ли текущий процессор SSE 4.2:
 ```bash
 $ grep -q sse4_2 /proc/cpuinfo && echo "SSE 4.2 supported" || echo "SSE 4.2 not supported"
 ```
@@ -30,7 +30,7 @@ $ docker cp upload_data_to_db.csv my-clickhouse-server:/upload_data_to_db.csv
 $ docker exec -it my-clickhouse-server /bin/bash
 $ clickhouse-client --format_csv_delimiter=";" --query="INSERT INTO db_users.profile FORMAT CSV" < upload_data_to_db.csv
 ```
-3. Redis - https://redis.io/docs/getting-started/installation/install-redis-on-linux/
+3. **Redis** - https://redis.io/docs/getting-started/installation/install-redis-on-linux/  
 Без установки. Запуск в Docker контейнере: 
 ```bash
 $ docker run -p 6379:6379 -it redis/redis-stack:latest
@@ -40,11 +40,11 @@ $ docker run -p 6379:6379 -it redis/redis-stack:latest
 $ docker exec -it some-redis redis-cli (клиент командной строки)
 $ docker exec -it some-redis /bin/bash
 ```
-4. Отправка данных во внешний сервис (https://pastebin.com) и получение ссылки.
-Необходимо зарегистрироваться https://pastebin.com/ и получить API_KEY.
+4. Отправка данных во внешний сервис (https://pastebin.com) и получение ссылки.  
+  Необходимо зарегистрироваться https://pastebin.com/ и получить API_KEY.
 ____
-## Requirements.txt
-python-dotenv==0.21.1
-requests==2.28.2
-redis==4.4.2
-clickhouse-driver==0.2.5
+## Requirements.txt  
+  python-dotenv==0.21.1  
+  requests==2.28.2  
+  redis==4.4.2  
+  clickhouse-driver==0.2.5  
